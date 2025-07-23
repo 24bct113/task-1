@@ -1,0 +1,32 @@
+let tasks = [];
+function addTask(task, callback) {
+    tasks.push(task);      
+    callback();            
+}
+function printTasks() {
+    console.log("All Tasks:");
+    for (let i = 0; i < tasks.length; i++) {
+        console.log((i + 1) + ". " + tasks[i]);
+    }
+}
+let printTasksArrow = () => {
+    console.log("All Tasks (Arrow Function):");
+    tasks.forEach((t, i) => console.log((i + 1) + ". " + t));
+};
+function addMultipleTasks() {
+    for (let i = 0; i < arguments.length; i++) {
+        tasks.push(arguments[i]);
+    }
+    printTasks();
+}
+let globalVar = "I am a global variable";
+
+function showScope() {
+    let localVar = "I am a local variable";
+    console.log(globalVar); // works
+    console.log(localVar);  // works
+}
+showScope();
+addTask("Learn JavaScript", printTasks);
+addTask("Complete Homework", printTasksArrow);
+addMultipleTasks("Go Shopping", "Play Football", "Watch Movie");
