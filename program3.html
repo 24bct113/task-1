@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function Say(){
+        //     let a=10;
+        //     let name="Javascript"
+        //     console.log("hai global scope");
+        //     console.log("Within the func"+name)
+        //     console.log(a);
+        // }
+        // Say()
+        // console.log("Outside the func"+name);
+        // console.log(a);
+        // function Voting(age){
+        //     if(age>=18){
+        //         var adharsh=true;
+        //         var adharsh=true;
+        //         console.log("eligible")
+        //         console.log(adharsh)
+        //     }
+        //     console.log(adharsh);
+        //     console.log(adharsh);
+        // }
+        // Voting(18)
+        function text(){
+            console.log("message");
+        }
+        function send(callback){
+            console.log("message sended");
+            setInterval(callback,1000);
+        }
+        send(text);
+    </script>
+</body>
+</html>
