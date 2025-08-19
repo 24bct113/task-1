@@ -9,6 +9,7 @@
 
 </head>
 <body>
+<script>
      <!-- <div class="container border border-1 border-danger">1</div>
     <div class="container-fluid border border-3 border-primary">2</div> 
     <nav class="navbar bg-body-tertiary">
@@ -115,7 +116,6 @@
       <div class="container border border-3 bg-info h-25">
         <p @copy rights reserved kgcas.com></p>
       </div>
-
-
+</script>
 </body>
 </html>
