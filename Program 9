@@ -1,54 +1,124 @@
-//index.html
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image</title>
-    <link rel="stylesheet" href="style.css">
+
+ <meta charset="UTF-8">
+
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ <title>Image Slider</title>
+
+ <style>
+
+ .slider {
+
+ text-align: center;
+
+ position: relative;
+
+ width: 60%;
+
+ margin: auto;
+
+ }
+
+ .slider img {
+
+ width: 100%;
+
+ height: auto;
+
+ }
+
+ .slider button {
+
+ position: absolute;
+
+ top: 50%;
+
+ transform: translateY(-50%);
+
+ padding: 10px;
+
+ background-color: rgba(0, 0, 0, 0.5);
+
+ color: white;
+
+ border: none;
+
+ cursor: pointer;
+
+ }
+
+ #prevBtn {
+
+ left: 10px;
+
+ }
+
+ #nextBtn {
+
+ right: 10px;
+
+ }
+
+ </style>
+
 </head>
+
 <body>
-    <div class="carousel">
-        <img src="https://wallpapers.com/images/hd/creative-background-egm607m130f1cug2.jpg" alt="creativity">
-        <div class="but">
-            <button>precious</button>
-            <button>next</button>
-        </div>
-    </div>
-    <script src="script.js"></script>
+
+ <div class="slider">
+
+ <img src="image1.jpg" class="slider-image" alt="Image 1">
+
+ <button id="prevBtn">Previous</button>
+
+<button id="nextBtn">Next</button>
+
+ </div>
+
+ <script>
+
+ let images = ["image1.jpg", "image2.jpg", "image3.jpg"];
+
+ let currentIndex = 0;
+
+ const imgElement = document.querySelector(".slider-image");
+
+ const nextBtn = document.getElementById("nextBtn");
+
+ const prevBtn = document.getElementById("prevBtn");
+
+ nextBtn.addEventListener("click", () => {
+
+ currentIndex = (currentIndex + 1) % images.length;
+
+ imgElement.src = images[currentIndex];
+
+ });
+
+ prevBtn.addEventListener("click", () => {
+
+ currentIndex = (currentIndex - 1 + images.length) % images.length;
+
+ imgElement.src = images[currentIndex];
+
+ });
+
+ setInterval(() => {
+
+ currentIndex = (currentIndex + 1) % images.length;
+
+ imgElement.src = images[currentIndex];
+
+ }, 3000);
+
+ </script>
+
 </body>
+
 </html>
 
-//style.css
-body{
-    margin:0;
-}
-.carousel{
-    height:99vh;
-    width:98vw;
-}
-.carousel img{
-    position: absolute;
-    height: inherit;
-    width: inherit;
-}
-.but{
-    position: absolute;
-    top: 50%;
-    width:inherit;
-    display: flex;
-    justify-content: space-between;
-}
-
-//script.js
-let images=["https://wallpapers.com/images/hd/creative-background-egm607m130f1cug2.jpg","https://tse3.mm.bing.net/th/id/OIP.foP_7XqO0kglzngHDgfkpAHaEo?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3","https://img.freepik.com/premium-photo/colorful-vibrant-light-bulb-illuminating-room_666746-14093.jpg"]
-let imgind=0;
-
-document.querySelectorAll(".but button")[0].addEventListener('click',()=>{
-    if(imagesmgind>0)imgind--
-    document.querySelector(".carousel img").src= image[imgind]
-})
-document.querySelectorAll(".but button")[1].addEventListener('click',()=>{
-    if(imgind<images.length-2)imgind++;else imgind=0;
-    document.querySelector(".carousel img").src= image[imgind]
-})
