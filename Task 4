@@ -1,0 +1,7 @@
+
+let sentence = "Hello World";
+console.log("Reversed words:", sentence.split(" ").map(w => w.split("").reverse().join("")).join(" "));
+let arr = [1,2,2,3,4,4,5];
+console.log("No duplicates:", [...new Set(arr)]);
+let text = "JavaScript is fun";
+console.log("Vowel count:", text.toLowerCase().split("").filter(c => "aeiou".includes(c)).length);
