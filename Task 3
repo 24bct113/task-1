@@ -1,0 +1,30 @@
+
+let tasks = [];
+function addTask(task, callback) {
+  tasks.push(task);
+  console.log(`Task "${task}" added successfully!`);
+  callback();
+}
+const showTasks = function() {
+  console.log("\nCurrent Tasks:");
+  tasks.forEach((t, index) => console.log(`${index + 1}. ${t}`));
+};
+const addMultipleTasks = (...newTasks) => {
+  newTasks.forEach(task => tasks.push(task));
+  console.log(`\n${newTasks.length} tasks added successfully!`);
+  showTasks();
+};
+let globalMessage = "This is from global scope";
+
+function checkScope() {
+  let localMessage = "This is from local scope";
+  console.log(globalMessage);
+  console.log(localMessage);
+}
+
+addTask("Buy groceries", showTasks);
+addTask("Finish homework", showTasks);
+
+addMultipleTasks("Clean room", "Pay bills", "Read a book");
+
+checkScope();
