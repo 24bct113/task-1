@@ -1,0 +1,16 @@
+
+let num1 = parseFloat(prompt("Enter first number:"));
+let num2 = parseFloat(prompt("Enter second number:"));
+let sum = num1 + num2;
+let difference = num1 - num2;
+let product = num1 * num2;
+let division = (num2 !== 0) ? (num1 / num2) : "Cannot divide by zero";
+let remainder = (num2 !== 0) ? (num1 % num2) : "Cannot find remainder (division by zero)";
+console.log("---- Simple Calculator ----");
+console.log("First number: " + num1);
+console.log("Second number: " + num2);
+console.log("Addition: " + sum);
+console.log("Subtraction: " + difference);
+console.log("Multiplication: " + product);
+console.log("Division: " + division);
+console.log("Modulus: " + remainder);
