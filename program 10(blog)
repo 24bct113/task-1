@@ -1,0 +1,47 @@
+import React from 'react'
+import {Link} from "rect-router-dom"
+
+function home() {
+  return (
+    <div>
+      Hi<Link to="/Post">React is a javascript library used to build attarctive and fast user interfaces</Link>
+    </div>
+  )
+}
+
+export default home
+(Home.jsx)
+
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import { BrowserRouter,Routes,Route } from 'react-router-dom'
+import Home from './home'
+import Post from './post'
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Home/>}></Route>
+      <Route path="/post" element={<Post/>}></Route>
+    </Routes>
+    </BrowserRouter>
+  </StrictMode>,
+)
+(Main.jsx)
+
+import React from 'react'
+
+function post() {
+  return (
+    <div>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia dolores obcaecati facere odio, eius, doloremque enim eligendi omnis quibusdam dolore magni ducimus. Distinctio laboriosam iste, error praesentium natus sunt! Quas.</p>
+      <p>ReactJs - Innovation lab blog program</p>
+    </div>
+  )
+}
+
+export default post
+
+(post.jsx)
+
