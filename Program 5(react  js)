@@ -1,0 +1,35 @@
+import { useEffect, useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+
+function App() {
+  const [greetings, setgreetings] = useState("")
+
+  useEffect(() => {
+    let hours = new Date().getHours()
+    let minit = new Date().getMinutes().toString().padStart(2, '0')
+    let seconds = new Date().getSeconds().toString().padStart(2, '0')
+
+    if (hours < 12) {
+      setgreetings(`Good Morning ${hours}:${minit}:${seconds}`)
+    }
+    else if (hours >= 12 && hours <= 17) {
+      setgreetings(`Good Afternoon ${hours}:${minit}:${seconds}`)
+    }
+    else {
+      setgreetings(`Good Evening ${hours}:${minit}:${seconds}`)
+    }
+  }, [])
+
+  return (
+    <>
+      <div>
+        <h1>Hii Reactjs</h1>
+        <h2>{greetings}</h2>
+      </div>
+    </>
+  )
+}
+
+export default App
